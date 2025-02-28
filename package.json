@@ -1,8 +1,9 @@
 {
-  "name": "eNode",
+  "name": "enode",
   "version": "0.2.0",
   "description": "eD2k/eMule Server",
-  "main": "enode.js",
+  "type": "module",
+  "main": "enode.ts",
   "directories": {
     "doc": "docs",
     "test": "test"
@@ -10,20 +11,30 @@
   "dependencies": {
     "async": "^3.0.0",
     "hexy": "^0.3.0",
-    "ipaddr.js": "^1.9.0",
+    "ipaddr.js": "^2.2.0",
     "mongodb": "^3.2.5",
     "mysql": "^2.17.1",
+    "pino": "^9.6.0",
     "tinylogger": "^0.1.31",
     "turbo-net": "^1.4.0"
   },
   "devDependencies": {
-    "@types/node": "^12.0.2",
-    "typescript": "^3.4.5",
-    "ts-node": "^8.1.0"
+    "@eslint/compat": "^1.2.7",
+    "@types/bun": "^1.2.4",
+    "@types/node": "^22.13.5",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   },
   "scripts": {
     "test": "mocha -R spec",
-    "build": "tsc"
+    "build": "tsc",
+    "run": "NODE_OPTIONS=--openssl-legacy-provider node enode.js",
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
